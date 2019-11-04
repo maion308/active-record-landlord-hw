@@ -38,7 +38,6 @@ In `db/seeds.rb` (experimenting in the rails console and then copying the workin
 - Create at least 9 instances of the Tenant class. At least 5 should belong to an apartment
 - Query for all instances of the Tenant class and store it in a variable
 - Query for all instances of the Tenant class that belong to one of the Apartments you created and store it in a variable
-- Update of one of the objects you've created attributes using attribute helper methods
 - Save the object that you updated to the database
 - Update an object using the update method
 - Delete one of the objects you've created
