@@ -1,0 +1,6 @@
+  [1m[35m (396.4ms)[0m  [1m[35mCREATE DATABASE "landlord_development" ENCODING = 'unicode'[0m
+  [1m[35m (386.7ms)[0m  [1m[35mCREATE DATABASE "landlord_test" ENCODING = 'unicode'[0m
+  [1m[35m (201.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "landlord_development"[0m
+  [1m[35m (212.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "landlord_test"[0m
+  [1m[35m (400.3ms)[0m  [1m[35mCREATE DATABASE "landlord_development" ENCODING = 'unicode'[0m
+  [1m[35m (384.8ms)[0m  [1m[35mCREATE DATABASE "landlord_test" ENCODING = 'unicode'[0m
