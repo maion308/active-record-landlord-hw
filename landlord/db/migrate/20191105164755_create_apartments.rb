@@ -1,7 +1,7 @@
 class CreateApartments < ActiveRecord::Migration[6.0]
   def change
     create_table :apartments do |t|
-      t.varchar :unit
+      t.string :unit
       t.integer :num_beds
       t.integer :num_baths
       t.integer :monthly_rent
