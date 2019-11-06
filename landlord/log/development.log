@@ -262,3 +262,49 @@ Migrating to CreateBuildings (20191105164821)
   [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(883176785832158265)[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mTenant Load (0.4ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTenant Load (0.8ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mApartment Load (4.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(883176785832158265)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(883176785832158265)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBuilding Create (4.6ms)[0m  [1m[32mINSERT INTO "buildings" ("address", "num_floors", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["address", "212 Park Avenue"], ["num_floors", 25], ["created_at", "2019-11-06 18:39:54.319780"], ["updated_at", "2019-11-06 18:39:54.319780"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBuilding Create (0.2ms)[0m  [1m[32mINSERT INTO "buildings" ("address", "num_floors", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["address", "316 Madison Avenue"], ["num_floors", 10], ["created_at", "2019-11-06 18:39:54.329951"], ["updated_at", "2019-11-06 18:39:54.329951"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBuilding Create (0.4ms)[0m  [1m[32mINSERT INTO "buildings" ("address", "num_floors", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["address", "212 Park Avenue"], ["num_floors", 25], ["created_at", "2019-11-06 18:40:21.636864"], ["updated_at", "2019-11-06 18:40:21.636864"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBuilding Create (0.2ms)[0m  [1m[32mINSERT INTO "buildings" ("address", "num_floors", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["address", "316 Madison Avenue"], ["num_floors", 10], ["created_at", "2019-11-06 18:40:21.640358"], ["updated_at", "2019-11-06 18:40:21.640358"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBuilding Create (0.4ms)[0m  [1m[32mINSERT INTO "buildings" ("address", "num_floors", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["address", "212 Park Avenue"], ["num_floors", 25], ["created_at", "2019-11-06 18:40:25.795126"], ["updated_at", "2019-11-06 18:40:25.795126"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBuilding Create (0.2ms)[0m  [1m[32mINSERT INTO "buildings" ("address", "num_floors", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["address", "316 Madison Avenue"], ["num_floors", 10], ["created_at", "2019-11-06 18:40:25.799299"], ["updated_at", "2019-11-06 18:40:25.799299"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBuilding Create (0.4ms)[0m  [1m[32mINSERT INTO "buildings" ("address", "num_floors", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["address", "212 Park Avenue"], ["num_floors", 25], ["created_at", "2019-11-06 18:43:24.176025"], ["updated_at", "2019-11-06 18:43:24.176025"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBuilding Create (0.2ms)[0m  [1m[32mINSERT INTO "buildings" ("address", "num_floors", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["address", "316 Madison Avenue"], ["num_floors", 10], ["created_at", "2019-11-06 18:43:24.179429"], ["updated_at", "2019-11-06 18:43:24.179429"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

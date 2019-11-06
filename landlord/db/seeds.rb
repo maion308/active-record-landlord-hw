@@ -17,9 +17,14 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
+
+Carlisle = Building.create({ address: '212 Park Avenue', num_floors: 25 })
+Madison = Building.create({ address: '316 Madison Avenue', num_floors: 10 })
 # Create at least 3 instances of the Apartment class
+
+apartment_1_a =
     Apartment.create(
-        id: 1,
+        building: Carlisle,
         unit: "1a",
         num_beds: 3,
         num_baths: 1,
@@ -28,9 +33,10 @@
         sq_ft: 1200,
     )
 
+apartment_12_j =
     Apartment.create(
-        id: 2,
-        unit: "1b",
+        building: Carlisle,
+        unit: "12j",
         num_beds: 2,
         num_baths: 1,
         monthly_rent: 2500,
@@ -38,9 +44,21 @@
         sq_ft: 1200,
     )
 
+apartment_9_e =
     Apartment.create(
-        id: 3,
-        unit: "1c",
+        building: Madison,
+        unit: "9e",
+        num_beds: 3,
+        num_baths: 1,
+        monthly_rent: 3000,
+        allow_pets: true,
+        sq_ft: 1200,
+    )
+
+apartment_4_g =
+    Apartment.create(
+        building: Madison,
+        unit: "4g",
         num_beds: 3,
         num_baths: 1,
         monthly_rent: 3000,
@@ -63,10 +81,10 @@
 # Create at least 9 instances of the Tenant class. At least 5 should belong to an apartment
   
     Tenant.create(
-        id: 4,
+        apartment: apartment_1_a,
         first_name: "Joe",
         last_name: "Plumber",
-        birth_date: 03/08/1973,
+        birth_date: 44.year.ago,
         nickname: "joe",
         occupation: "Plumber",
         ssn: 000000001,
@@ -74,10 +92,10 @@
     )
 
     Tenant.create(
-        id: 5,
+        apartment: apartment_12_j,
         first_name: "Joanne",
         last_name: "Kessinger",
-        birth_date: 03/08/1984,
+        birth_date: 27.year.ago,
         nickname: "Joie",
         occupation: "Dancer",
         ssn: 000000002,
@@ -85,83 +103,92 @@
     )
 
     Tenant.create(
-        id: 6,
+        apartment: apartment_9_e,
         first_name: "Kelsey",
         last_name: "Baker",
-        birth_date: 03/08/1990,
+        birth_date: 24.year.ago,
         nickname: "Kelly",
         occupation: "Accountant",
-        ssn: 000000003,
+        ssn: 000-00-0003,
         has_pets: true,
     )
 
     Tenant.create(
-        id: 7,
+        apartment: apartment_4_g,
         first_name: "Mark",
         last_name: "Mcgrath",
-        birth_date: 03/08/1983,
+        birth_date: 38.year.ago,
         nickname: "MC",
         occupation: "Singer",
-        ssn: 000000004,
+        ssn: 000-00-0004,
         has_pets: true,
     )
 
     Tenant.create(
-        id: 8,
+        apartment: apartment_12_j,
         first_name: "Christine",
         last_name: "Collins",
-        birth_date: 03/08/1988,
+        birth_date: 28.year.ago,
         nickname: "Christy",
         occupation: "Teacher",
-        ssn: 000000005,
+        ssn: 000-00-0005,
         has_pets: true,
     )
 
     Tenant.create(
-        id: 9,
+        apartment: apartment_12_j,
         first_name: "Shelly",
         last_name: "James",
-        birth_date: 03/08/1971,
+        birth_date: 26.year.ago,
         nickname: "CiCi",
         occupation: "Designer",
-        ssn: 000000006,
+        ssn: 000-00-0006,
         has_pets: false,
     )
 
     Tenant.create(
-        id: 10,
+        apartment: apartment_4_g,
         first_name: "Steven",
         last_name: "Bernstein",
-        birth_date: 03/08/1979,
+        birth_date: 25.year.ago,
         nickname: "Steve",
         occupation: "Doctor",
-        ssn: 000000007,
+        ssn: 000-00-0007,
         has_pets: false,
     )
 
     Tenant.create(
-        id: 11,
+        apartment: apartment_4_g,
         first_name: "Richard",
         last_name: "Pratt",
-        birth_date: 03/08/1986,
+        birth_date: 55.year.ago,
         nickname: "Rick",
         occupation: "Dentist",
-        ssn: 000000008,
+        ssn: 000-00-2008,
         has_pets: false,
     )
 
     Tenant.create(
-        id: 12,
+        apartment: apartment_1_a,
         first_name: "Michael",
         last_name: "Mcginnes",
-        birth_date: 03/08/1964,
+        birth_date: 42.year.ago,
         nickname: "Mike",
         occupation: "Owner",
-        ssn: 000000009,
+        ssn: 000-00-1009,
         has_pets: false,
     )
 # Query for all instances of the Tenant class and store it in a variable
+@all_tenants = Tenant.all
+p @all_tenants
 # Query for all instances of the Tenant class that belong to one of the Apartments you created and store it in a variable
+@created_tenants = Tenant.where(apartment_id: 4..12)
 # Save the object that you updated to the database
+@obj1 = Apartment.find(2)
+p @obj1.num_baths = 2
+@obj1.save
 # Update an object using the update method
+@obj2 = Apartment.find(3)
+@obj2.update(num_beds: 2)
 # Delete one of the objects you've created
+Tenant.find(3).destroy
