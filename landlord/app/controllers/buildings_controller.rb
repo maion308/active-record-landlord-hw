@@ -1,5 +1,6 @@
 class BuildingsController < ApplicationController
   before_action :set_building, only: [:show, :update, :destroy]
+
   # GET /buildings
   def index
     @buildings = Building.all

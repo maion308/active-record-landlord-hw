@@ -8,6 +8,7 @@ class CreateTenants < ActiveRecord::Migration[6.0]
       t.string :occupation
       t.integer :ssn
       t.boolean :has_pets
+      t.references :apartment, null: false, foreign_key: true
 
       t.timestamps
     end

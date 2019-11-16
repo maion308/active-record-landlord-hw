@@ -18,52 +18,52 @@
 #  updated_at   :datetime         not null
 #
 
-Carlisle = Building.create({ address: '212 Park Avenue', num_floors: 25 })
-Madison = Building.create({ address: '316 Madison Avenue', num_floors: 10 })
 # Create at least 3 instances of the Apartment class
 
+
 apartment_1_a =
-    Apartment.create(
-        building: Carlisle,
+    Apartment.create({
         unit: "1a",
         num_beds: 3,
         num_baths: 1,
         monthly_rent: 3000,
         allow_pets: true,
-        sq_ft: 1200,
+        sq_ft: 1200
+    }
     )
 
 apartment_12_j =
-    Apartment.create(
-        building: Carlisle,
+    Apartment.create({
         unit: "12j",
         num_beds: 2,
         num_baths: 1,
         monthly_rent: 2500,
         allow_pets: true,
-        sq_ft: 1200,
+        sq_ft: 1200
+
+    }
     )
 
 apartment_9_e =
-    Apartment.create(
-        building: Madison,
+    Apartment.create({
         unit: "9e",
         num_beds: 3,
         num_baths: 1,
         monthly_rent: 3000,
         allow_pets: true,
-        sq_ft: 1200,
+        sq_ft: 1200
+    }
     )
 
 apartment_4_g =
-    Apartment.create(
-        building: Madison,
+    Apartment.create({
         unit: "4g",
         num_beds: 3,
         num_baths: 1,
         monthly_rent: 3000,
         allow_pets: true,
-        sq_ft: 1200,
+        sq_ft: 1200
+    }
     )
 
 # Table name: tenants
