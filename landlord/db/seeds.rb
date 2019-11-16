@@ -20,9 +20,13 @@
 
 # Create at least 3 instances of the Apartment class
 
+@building = Building.create!({
+    address: "505 Park Avenue", 
+    num_floors: 12})
 
-apartment_1_a =
-    Apartment.create({
+@apartment_1_a =
+    Apartment.create!({
+        building: @building,
         unit: "1a",
         num_beds: 3,
         num_baths: 1,
@@ -32,8 +36,10 @@ apartment_1_a =
     }
     )
 
-apartment_12_j =
+
+@apartment_12_j =
     Apartment.create({
+        building: @building,
         unit: "12j",
         num_beds: 2,
         num_baths: 1,
@@ -44,8 +50,9 @@ apartment_12_j =
     }
     )
 
-apartment_9_e =
+@apartment_9_e =
     Apartment.create({
+        building: @building,
         unit: "9e",
         num_beds: 3,
         num_baths: 1,
@@ -55,8 +62,9 @@ apartment_9_e =
     }
     )
 
-apartment_4_g =
+@apartment_4_g =
     Apartment.create({
+        building: @building,
         unit: "4g",
         num_beds: 3,
         num_baths: 1,
@@ -66,22 +74,22 @@ apartment_4_g =
     }
     )
 
-# Table name: tenants
-#
-#  id         :integer          not null, primary key
-#  first_name :string
-#  last_name  :string
-#  birth_date :date
-#  nickname   :string
-#  occupation :string
-#  ssn        :integer
-#  has_pets   :boolean
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-# Create at least 9 instances of the Tenant class. At least 5 should belong to an apartment
+# # Table name: tenants
+# #
+# #  id         :integer          not null, primary key
+# #  first_name :string
+# #  last_name  :string
+# #  birth_date :date
+# #  nickname   :string
+# #  occupation :string
+# #  ssn        :integer
+# #  has_pets   :boolean
+# #  created_at :datetime         not null
+# #  updated_at :datetime         not null
+# # Create at least 9 instances of the Tenant class. At least 5 should belong to an apartment
   
-    Tenant.create(
-        apartment: apartment_1_a,
+    Tenant.create!(
+        apartment: @apartment_1_a,  #here needs to reference the appt obj
         first_name: "Joe",
         last_name: "Plumber",
         birth_date: 44.year.ago,
@@ -91,8 +99,11 @@ apartment_4_g =
         has_pets: false,
     )
 
+# apt = puts Tenant.apartment
+# puts apt
+
     Tenant.create(
-        apartment: apartment_12_j,
+        apartment: @apartment_12_j,
         first_name: "Joanne",
         last_name: "Kessinger",
         birth_date: 27.year.ago,
@@ -103,7 +114,7 @@ apartment_4_g =
     )
 
     Tenant.create(
-        apartment: apartment_9_e,
+        apartment: @apartment_9_e,
         first_name: "Kelsey",
         last_name: "Baker",
         birth_date: 24.year.ago,
@@ -114,7 +125,7 @@ apartment_4_g =
     )
 
     Tenant.create(
-        apartment: apartment_4_g,
+        apartment: @apartment_4_g,
         first_name: "Mark",
         last_name: "Mcgrath",
         birth_date: 38.year.ago,
@@ -125,7 +136,7 @@ apartment_4_g =
     )
 
     Tenant.create(
-        apartment: apartment_12_j,
+        apartment: @apartment_12_j,
         first_name: "Christine",
         last_name: "Collins",
         birth_date: 28.year.ago,
@@ -136,7 +147,7 @@ apartment_4_g =
     )
 
     Tenant.create(
-        apartment: apartment_12_j,
+        apartment: @apartment_12_j,
         first_name: "Shelly",
         last_name: "James",
         birth_date: 26.year.ago,
@@ -147,7 +158,7 @@ apartment_4_g =
     )
 
     Tenant.create(
-        apartment: apartment_4_g,
+        apartment: @apartment_4_g,
         first_name: "Steven",
         last_name: "Bernstein",
         birth_date: 25.year.ago,
@@ -158,7 +169,7 @@ apartment_4_g =
     )
 
     Tenant.create(
-        apartment: apartment_4_g,
+        apartment: @apartment_4_g,
         first_name: "Richard",
         last_name: "Pratt",
         birth_date: 55.year.ago,
@@ -169,7 +180,7 @@ apartment_4_g =
     )
 
     Tenant.create(
-        apartment: apartment_1_a,
+        apartment: @apartment_1_a,
         first_name: "Michael",
         last_name: "Mcginnes",
         birth_date: 42.year.ago,
@@ -178,7 +189,7 @@ apartment_4_g =
         ssn: 000-00-1009,
         has_pets: false,
     )
-# Query for all instances of the Tenant class and store it in a variable
+# # Query for all instances of the Tenant class and store it in a variable
 @all_tenants = Tenant.all
 p @all_tenants
 # Query for all instances of the Tenant class that belong to one of the Apartments you created and store it in a variable

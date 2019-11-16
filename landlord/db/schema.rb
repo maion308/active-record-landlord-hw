@@ -22,8 +22,10 @@ ActiveRecord::Schema.define(version: 2019_11_06_193847) do
     t.integer "monthly_rent"
     t.boolean "allow_pets"
     t.integer "sq_ft"
+    t.bigint "building_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["building_id"], name: "index_apartments_on_building_id"
   end
 
   create_table "buildings", force: :cascade do |t|
@@ -47,5 +49,6 @@ ActiveRecord::Schema.define(version: 2019_11_06_193847) do
     t.index ["apartment_id"], name: "index_tenants_on_apartment_id"
   end
 
+  add_foreign_key "apartments", "buildings"
   add_foreign_key "tenants", "apartments"
 end
